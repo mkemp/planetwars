@@ -1,0 +1,63 @@
+This package in an alternative Java starter kit for Planet Wars AI Challenge. The scripts could be modified to work for any language that runs on *nix with minimal effort.
+
+http://ai-contest.com/
+
+MyBot.java is a sample bot - feel free to modify and test your changes. (Java starter classes are coming soon.)
+
+Requirements:
+
+* Java 1.6
+
+Layout:
+
+.build/ - build_zip.sh copies source files, does a test compile and build a zip from here
+.play/ - play.sh, play_all.sh and tcp.sh use this for compilation and logs
+.play/build/ - compiled class files
+.play/game/mapXXX - output and logs from last game on mapXXX
+.play/game/tcp - output and logs from last game with TCP
+example_bots/ - contains the jars for the example bots
+maps/ - contains the example maps
+src/ - java source files go here
+tools/ - contains the PlayGame and ViewGame jars
+
+Usage:
+
+[0] Rename maps to standardize numbers (optional)
+
+This will move maps/mapX.txt -> maps/map00X.txt and maps/mapXX.txt -> map0XX.txt. I just like the names consistent to stardize the output so I can easy grep, awk, etc.
+
+$ ./rename_maps.sh
+
+[1] To run a game against an example bot on map 5, run
+
+$ ./play.sh 005 [bot-name: default is DualBot]
+
+Take a look at the log: MyBot.log
+
+[2] To play an example bot on all 100 maps, run
+
+$ ./play_all.sh [bot-name: default is DualBot]
+
+This will take a few minutes to run..
+
+[3] To play other people's bots in REAL TIME without having to submit
+your code to the contest server, run
+
+$ ./tcp.sh
+
+Just make sure that you change the my_bot_name variable to something other than MyBot.
+See http://www.benzedrine.cx/planetwars/ for more details. 
+Thanks dhartmei for setting up the server!
+
+[4] To view a game replay, run
+
+$ ./view.sh 005
+
+[5] To build a zip file for submission, run
+
+$ ./build_zip.sh
+
+Enjoy!
+
+-InvaderZim
+
